@@ -1,6 +1,4 @@
-// Описаний в документації
 import flatpickr from 'flatpickr';
-// Додатковий імпорт стилів
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 
@@ -38,7 +36,6 @@ function handleStartTimer() {
   timerId = setInterval(() => {
     const currentTime = Date.now();
     const deltaTime = selectedData - currentTime;
-    // const { days, hours, minutes, seconds } = convertMs(deltaTime);
     const time = convertMs(deltaTime);
     refs.startBtn.disabled = true;
     if (selectedData <= Date.now()) {
@@ -61,7 +58,6 @@ refs.startBtn.addEventListener('click', handleStartTimer);
 const currentDate = flatpickr('input#datetime-picker', options);
 
 function convertMs(ms) {
-  // Number of milliseconds per unit of time
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
